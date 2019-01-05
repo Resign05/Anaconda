@@ -17,6 +17,8 @@ def canInt(string):
 def lex(fcont):
 	fcont = list(fcont)
 	tok = ""
+	varStarted = 0
+	var = ""
 	isexpr = 0
 	state = 0
 	expr = ""
@@ -37,6 +39,24 @@ def lex(fcont):
 			elif expr != "" and isexpr == 0:
 				tokens.append("Number:"+expr)
 				expr = ""
+			elif var != "":
+				tokens.append("Variable:" + var)
+				varStarted = 0
+				var = ""
+			tok = ""
+		elif tok == "=" and state == 0:
+			if var != "":
+				tokens.append("Variable:" + var)
+				var = ""
+				varStarted = 0
+			tokens.append("EQUALS:")
+			tok = ""
+		elif tok == "£" and state == 0:
+			varStarted = 1
+			var += tok
+			tok = ""
+		elif varStarted == 1:
+			var += tok
 			tok = ""
 		elif tok == "printf":
 			tokens.append("Printf")
@@ -60,6 +80,7 @@ def lex(fcont):
 			string += tok
 			tok = ""
 
+	print(tokens)
 	return tokens
 
 def parse(toks):
@@ -89,6 +110,6 @@ def parse(toks):
 def run():
 	dta = open_file(argv[1])
 	toks = lex(dta)
-	parse(toks)
+	#parse(toks)
 
 run()
