@@ -28,15 +28,15 @@ Forks and Pull Requests are wanted, if you have a feature that you think would b
 
 ## TODO:
 
-Assigning Variables [X]
+- [x] Assigning Variables
 
-Storing Variables   [ ]
+- [ ] Storing Variables
 
-Read Variables      [ ]
+- [ ] Read Variables
 
-Print Variables     [ ]
+- [ ] Print Variables
 
-Overwrite Variables [ ]
+- [ ] Overwrite Variables
 
 ## Authors
 
