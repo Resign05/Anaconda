@@ -26,6 +26,13 @@ Right now, there is no real reason to use Anaconda unless it is to assist the De
 
 Forks and Pull Requests are wanted, if you have a feature that you think would be good, either code it in your Fork of the Repo and create a Pull Request or create a suggestion in the Issues tab on GitHub. Along with any Pull Requests, please create the usage of your code so I can make sure it is not already implemented or the feature is not needed.
 
+## TODO:
+
+Assigning Variables []
+Read Variables      []
+Print Variables     []
+Overwrite Variables []
+
 ## Authors
 
 Resign05
