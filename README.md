@@ -1,6 +1,6 @@
 # Anaconda
 
-<center>[![Build Status](https://travis-ci.com/Resign05/Anaconda.svg?branch=master)](https://travis-ci.com/Resign05/Anaconda)</center>
+[![Build Status](https://travis-ci.com/Resign05/Anaconda.svg?branch=master)](https://travis-ci.com/Resign05/Anaconda)
 
 Anaconda is a Programming Language written in Python to simplify many tasks which arise in Python and as to serve a learning purpose to myself so I can progress in my abilities of Python!
 
