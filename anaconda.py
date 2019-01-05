@@ -1,6 +1,7 @@
 from sys import *
 
 tokens = []
+symbols = {}
 
 def open_file(fn):
 	dta = open(fn, 'r').read()
@@ -49,7 +50,7 @@ def lex(fcont):
 				tokens.append("Variable:" + var)
 				var = ""
 				varStarted = 0
-			tokens.append("EQUALS:")
+			tokens.append("Equals")
 			tok = ""
 		elif tok == "£" and state == 0:
 			varStarted = 1
@@ -80,7 +81,6 @@ def lex(fcont):
 			string += tok
 			tok = ""
 
-	print(tokens)
 	return tokens
 
 def parse(toks):
@@ -99,17 +99,23 @@ def parse(toks):
 		elif toks[i+1][0:10] == "Expression":
 			print(eval(toks[i+1][11:]))
 
-	while(i < len(tokens)):
-		if tokens[i] == "Printf":
+	def assignparse(vname,value):
+		symbols[vname] = value
+
+	while(i < len(toks)):
+		if toks[i] == "Printf":
 			if toks[i+1][0:3] in t3l:
 				printfparse(toks)
 				i += 2
 			else:
 				i += 1
-
+		if toks[i][0:8] + " " + toks[i+1] + " " + toks[i+2][0:6] == "Variable Equals String":
+			assignparse(toks[i][10:],toks[i+2][8:-1])
+			i+=3
+			
 def run():
 	dta = open_file(argv[1])
 	toks = lex(dta)
-	#parse(toks)
+	parse(toks)
 
 run()

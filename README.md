@@ -30,7 +30,7 @@ Forks and Pull Requests are wanted, if you have a feature that you think would b
 
 - [x] Assigning Variables
 
-- [ ] Storing Variables
+- [x] Storing Variables
 
 - [ ] Read Variables
 
